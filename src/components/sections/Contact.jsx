@@ -15,7 +15,7 @@ const Contact = () => {
         setLoading(true);
 
         const formData = new FormData(e.target);
-        formData.append("access_key", "YOUR_ACCESS_KEY_HERE"); // Replace this with Web3Forms Access Key
+        formData.append("access_key", "88939ec5-fa98-4bc0-b782-95b9ceefb4ae"); // Replace this with Web3Forms Access Key
 
         try {
             const res = await fetch("https://api.web3forms.com/submit", {
@@ -64,7 +64,7 @@ const Contact = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="flex-1 glass-card p-8 md:p-12 relative"
+                        className="flex-1 glass-card p-6 md:p-12 relative"
                     >
                         <h3 className="text-3xl font-bold text-white mb-6">Send a Message</h3>
 
@@ -136,10 +136,10 @@ const Contact = () => {
                             </Canvas>
                         </div>
 
-                        <div className="w-full glass-card p-6 mt-8 flex flex-col gap-4">
-                            <div className="flex items-center gap-4 text-gray-300">
-                                <Mail className="text-brand-cyan" size={24} />
-                                <span>adityashirsath017@gmail.com</span>
+                        <div className="w-full glass-card p-4 md:p-6 mt-8 flex flex-col gap-4 overflow-hidden">
+                            <div className="flex items-center gap-4 text-gray-300 w-full">
+                                <Mail className="text-brand-cyan shrink-0" size={24} />
+                                <span className="break-all text-sm md:text-base">adityashirsath017@gmail.com</span>
                             </div>
                             <div className="flex items-center gap-4 text-gray-300">
                                 <Phone className="text-brand-cyan" size={24} />

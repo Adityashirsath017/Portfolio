@@ -44,7 +44,7 @@ const AboutCard = () => {
                 rotateY,
                 transformStyle: 'preserve-3d',
             }}
-            className="relative w-full max-w-2xl mx-auto glass-card p-8 md:p-12 z-10 cursor-none"
+            className="relative w-full max-w-2xl mx-auto glass-card p-6 md:p-12 z-10 cursor-none"
         >
             <div style={{ transform: 'translateZ(50px)' }} className="flex flex-col gap-6">
                 <h2 className="text-4xl md:text-5xl font-bold text-white text-glow mb-4">
@@ -59,18 +59,18 @@ const AboutCard = () => {
                     From developing real-time computer vision systems using YOLOv11 to building scalable full-stack platforms like Fixmate Hub, I thrive on solving complex problems. When I'm not coding, I'm exploring new AI models, refining my 3D web development skills, and pushing the boundaries of what's possible with technology.
                 </p>
 
-                <div className="flex flex-col gap-4 mt-4">
+                <div className="flex flex-col gap-4 mt-4 overflow-hidden">
                     <div className="flex items-center gap-4 text-gray-300">
-                        <MapPin className="text-brand-purple" size={24} />
-                        <span className="text-lg">Mumbai, Maharashtra</span>
+                        <MapPin className="text-brand-purple shrink-0" size={24} />
+                        <span className="text-base md:text-lg">Mumbai, Maharashtra</span>
+                    </div>
+                    <div className="flex items-center gap-4 text-gray-300 w-full">
+                        <Mail className="text-brand-purple shrink-0" size={24} />
+                        <span className="text-sm md:text-lg break-all">adityashirsath017@gmail.com</span>
                     </div>
                     <div className="flex items-center gap-4 text-gray-300">
-                        <Mail className="text-brand-purple" size={24} />
-                        <span className="text-lg">adityashirsath017@gmail.com</span>
-                    </div>
-                    <div className="flex items-center gap-4 text-gray-300">
-                        <Code2 className="text-brand-purple" size={24} />
-                        <span className="text-lg">AI/ML & Full-Stack</span>
+                        <Code2 className="text-brand-purple shrink-0" size={24} />
+                        <span className="text-base md:text-lg">AI/ML & Full-Stack</span>
                     </div>
                 </div>
             </div>

@@ -112,15 +112,15 @@ const Hero = () => {
                         Explore My Universe
                         <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
                     </motion.a>
-                </motion.div>
-
             </div>
+        </motion.div>
 
-            {/* Overlay Avatar image floating on the Right Side */}
-            <div className="absolute right-0 md:right-[5%] top-1/2 -translate-y-1/2 w-full md:w-[40%] h-[60%] md:h-[80%] flex items-center justify-center z-20 pointer-events-none opacity-20 md:opacity-100">
-                <img src={`${import.meta.env.BASE_URL}avatar.png`} alt="Aditya Avatar" className="w-auto h-full object-contain filter drop-shadow-[0_0_30px_rgba(0,255,255,0.8)] fade-bottom" />
-            </div>
-        </section>
+                {/* Avatar image dynamically placed in flex for mobile, absolute for desktop */ }
+    <div className="md:absolute right-0 md:right-[5%] top-1/2 md:-translate-y-1/2 w-full md:w-[40%] h-[50vh] md:h-[80%] flex items-center justify-center z-20 pointer-events-none mt-8 md:mt-0">
+        <img src={`${import.meta.env.BASE_URL}avatar.png`} alt="Aditya Avatar" className="w-auto h-full object-contain filter drop-shadow-[0_0_30px_rgba(0,255,255,0.8)] fade-bottom" />
+    </div>
+            </div >
+        </section >
     );
 };
 
