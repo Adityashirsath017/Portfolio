@@ -125,9 +125,9 @@ const Contact = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="w-full lg:w-1/2 flex-none min-h-[250px] md:min-h-[400px] h-fit flex flex-col items-center justify-between"
+                        className="w-full lg:w-1/2 flex-none flex flex-col items-center gap-8"
                     >
-                        <div className="w-full h-[300px] md:h-full relative pointer-events-auto cursor-move">
+                        <div className="w-full h-[300px] lg:h-[450px] relative pointer-events-auto cursor-move shrink-0">
                             <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
                                 <ambientLight intensity={0.5} />
                                 <directionalLight position={[10, 10, 5]} intensity={1} />
@@ -136,7 +136,7 @@ const Contact = () => {
                             </Canvas>
                         </div>
 
-                        <div className="w-full glass-card p-4 md:p-6 mt-8 flex flex-col gap-4 overflow-hidden">
+                        <div className="w-full glass-card p-4 md:p-6 flex flex-col gap-4 overflow-hidden shrink-0">
                             <div className="flex items-center gap-4 text-gray-300 w-full min-w-0">
                                 <Mail className="text-brand-cyan flex-shrink-0" size={24} />
                                 <span className="break-all text-sm md:text-base">adityashirsath017@gmail.com</span>
