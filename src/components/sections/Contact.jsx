@@ -137,8 +137,8 @@ const Contact = () => {
                         </div>
 
                         <div className="w-full glass-card p-4 md:p-6 mt-8 flex flex-col gap-4 overflow-hidden">
-                            <div className="flex items-center gap-4 text-gray-300 w-full">
-                                <Mail className="text-brand-cyan shrink-0" size={24} />
+                            <div className="flex items-center gap-4 text-gray-300 w-full min-w-0">
+                                <Mail className="text-brand-cyan flex-shrink-0" size={24} />
                                 <span className="break-all text-sm md:text-base">adityashirsath017@gmail.com</span>
                             </div>
                             <div className="flex items-center gap-4 text-gray-300">

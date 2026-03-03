@@ -74,7 +74,7 @@ const ProjectCard = ({ project, index }) => {
                 rotateY,
                 transformStyle: 'preserve-3d',
             }}
-            className="relative w-full h-[450px] md:h-[500px] glass-card flex flex-col justify-between group cursor-pointer hover:border-brand-cyan/50 transition-colors duration-300 overflow-hidden"
+            className="relative w-full h-[420px] md:h-[500px] glass-card flex flex-col justify-between group cursor-pointer hover:border-brand-cyan/50 transition-colors duration-300 overflow-hidden"
         >
             {/* Project Thumbnail Image */}
             <div className="w-full h-[45%] overflow-hidden relative border-b border-white/5">
@@ -91,7 +91,7 @@ const ProjectCard = ({ project, index }) => {
             </div>
 
             {/* Project Content */}
-            <div className="p-6 flex flex-col flex-1" style={{ transform: 'translateZ(60px)' }}>
+            <div className="p-4 md:p-6 flex flex-col flex-1" style={{ transform: 'translateZ(60px)' }}>
                 <h3 className="text-xl md:text-2xl font-bold text-white mb-2 text-glow group-hover:text-brand-cyan transition-colors line-clamp-2">
                     {project.title}
                 </h3>
@@ -100,7 +100,7 @@ const ProjectCard = ({ project, index }) => {
                 </p>
             </div>
 
-            <div style={{ transform: 'translateZ(40px)' }} className="px-6 pb-6 mt-auto">
+            <div style={{ transform: 'translateZ(40px)' }} className="px-4 pb-4 md:px-6 md:pb-6 mt-auto">
                 <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.slice(0, 3).map((t, idx) => (
                         <span

@@ -7,6 +7,14 @@
     <title>portfolio</title>
   </head>
   <body>
+    <!-- Intercept React-Three-Fiber deprecation warnings before bundle load -->
+    <script>
+      const originalWarn = console.warn;
+      console.warn = (...args) => {
+        if (typeof args[0] === 'string' && args[0].includes('THREE.') && args[0].includes('deprecated')) return;
+        originalWarn(...args);
+      };
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
