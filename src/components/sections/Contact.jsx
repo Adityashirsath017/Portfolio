@@ -44,8 +44,18 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="w-full min-h-screen py-20 relative z-10 overflow-hidden">
-            <div className="container mx-auto px-6 md:px-16 pb-12">
+        <section id="contact" className="w-full min-h-[80vh] py-12 md:py-20 relative z-10 overflow-hidden flex flex-col justify-center">
+            {/* 3D Canvas Background */}
+            <div className="absolute inset-0 w-full h-full z-0 pointer-events-auto cursor-move opacity-60">
+                <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+                    <ambientLight intensity={0.5} />
+                    <directionalLight position={[10, 10, 5]} intensity={1} />
+                    <Satellite />
+                    <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={2} />
+                </Canvas>
+            </div>
+
+            <div className="container mx-auto px-6 md:px-16 pb-12 relative z-10 pointer-events-none">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -57,14 +67,14 @@ const Contact = () => {
                     <h2 className="text-4xl md:text-5xl font-bold text-white text-glow">Contact Me</h2>
                 </motion.div>
 
-                <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto">
+                <div className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto lg:items-end">
                     {/* Form Side */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="w-full lg:w-1/2 flex-none h-fit glass-card p-6 md:p-12 relative"
+                        className="w-full lg:w-1/2 flex-none h-fit glass-card p-6 md:p-12 relative pointer-events-auto"
                     >
                         <h3 className="text-3xl font-bold text-white mb-6">Send a Message</h3>
 
@@ -119,43 +129,33 @@ const Contact = () => {
                         </form>
                     </motion.div>
 
-                    {/* 3D Canvas Side */}
+                    {/* Contact Info Side */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="w-full lg:w-1/2 flex-none flex flex-col items-center gap-8"
+                        className="w-full lg:w-1/2 flex-none h-fit glass-card p-6 md:p-12 flex flex-col gap-6 overflow-hidden pointer-events-auto"
                     >
-                        <div className="w-full h-[300px] lg:h-[450px] relative pointer-events-auto cursor-move shrink-0">
-                            <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-                                <ambientLight intensity={0.5} />
-                                <directionalLight position={[10, 10, 5]} intensity={1} />
-                                <Satellite />
-                                <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={2} />
-                            </Canvas>
+                        <h3 className="text-2xl font-bold text-white mb-2">Connect Directly</h3>
+                        <div className="flex items-center gap-4 text-gray-300 w-full min-w-0">
+                            <Mail className="text-brand-cyan flex-shrink-0" size={24} />
+                            <span className="break-all text-sm md:text-base">adityashirsath017@gmail.com</span>
                         </div>
-
-                        <div className="w-full glass-card p-4 md:p-6 flex flex-col gap-4 overflow-hidden shrink-0">
-                            <div className="flex items-center gap-4 text-gray-300 w-full min-w-0">
-                                <Mail className="text-brand-cyan flex-shrink-0" size={24} />
-                                <span className="break-all text-sm md:text-base">adityashirsath017@gmail.com</span>
-                            </div>
-                            <div className="flex items-center gap-4 text-gray-300">
-                                <Phone className="text-brand-cyan" size={24} />
-                                <span>+91-9529469391</span>
-                            </div>
-                            <div className="flex gap-4 mt-2 pt-4 border-t border-white/10">
-                                <a href="https://www.linkedin.com/in/aditya-shirsath-547141261/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-brand-purple/20 text-white hover:text-brand-purple transition-colors pointer-events-auto">
-                                    <Linkedin size={24} />
-                                </a>
-                                <a href="https://github.com/Adityashirsath017" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-brand-cyan/20 text-white hover:text-brand-cyan transition-colors pointer-events-auto">
-                                    <Github size={24} />
-                                </a>
-                                <a href="https://www.instagram.com/mr.adii.017/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-[#ff0080]/20 text-white hover:text-[#ff0080] transition-colors pointer-events-auto">
-                                    <Instagram size={24} />
-                                </a>
-                            </div>
+                        <div className="flex items-center gap-4 text-gray-300">
+                            <Phone className="text-brand-cyan" size={24} />
+                            <span>+91-9529469391</span>
+                        </div>
+                        <div className="flex gap-4 mt-2 pt-4 border-t border-white/10">
+                            <a href="https://www.linkedin.com/in/aditya-shirsath-547141261/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-brand-purple/20 text-white hover:text-brand-purple transition-colors pointer-events-auto">
+                                <Linkedin size={24} />
+                            </a>
+                            <a href="https://github.com/Adityashirsath017" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-brand-cyan/20 text-white hover:text-brand-cyan transition-colors pointer-events-auto">
+                                <Github size={24} />
+                            </a>
+                            <a href="https://www.instagram.com/mr.adii.017/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-[#ff0080]/20 text-white hover:text-[#ff0080] transition-colors pointer-events-auto">
+                                <Instagram size={24} />
+                            </a>
                         </div>
                     </motion.div>
                 </div>
