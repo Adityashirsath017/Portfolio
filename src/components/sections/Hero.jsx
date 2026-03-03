@@ -116,9 +116,9 @@ const Hero = () => {
 
             </div>
 
-            {/* Overlay Avatar image completely floating on the Right Side overlapping the Galaxy */}
-            <div className="absolute right-0 md:right-[5%] top-1/2 -translate-y-1/2 w-[80%] md:w-[40%] h-[80%] flex items-center justify-center z-20 pointer-events-none">
-                <img src="/avatar.png" alt="Aditya Avatar" className="w-auto h-full object-contain filter drop-shadow-[0_0_30px_rgba(0,255,255,0.8)] fade-bottom" />
+            {/* Overlay Avatar image floating on the Right Side */}
+            <div className="absolute right-0 md:right-[5%] top-1/2 -translate-y-1/2 w-full md:w-[40%] h-[60%] md:h-[80%] flex items-center justify-center z-20 pointer-events-none opacity-20 md:opacity-100">
+                <img src={`${import.meta.env.BASE_URL}avatar.png`} alt="Aditya Avatar" className="w-auto h-full object-contain filter drop-shadow-[0_0_30px_rgba(0,255,255,0.8)] fade-bottom" />
             </div>
         </section>
     );

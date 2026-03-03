@@ -80,12 +80,12 @@ const ProjectCard = ({ project, index }) => {
             <div className="w-full h-[45%] overflow-hidden relative border-b border-white/5">
                 <div className="absolute inset-0 bg-brand-cyan/20 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-300 z-10"></div>
                 <img
-                    src={project.images[0]}
+                    src={`${import.meta.env.BASE_URL}${project.images[0].substring(1)}`}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     onError={(e) => {
                         e.target.onerror = null;
-                        e.target.src = `https://via.placeholder.com/600x400/050510/818cf8?text=${encodeURIComponent(project.title)}`;
+                        e.target.src = `https://placehold.co/600x400/050510/818cf8.png?text=${encodeURIComponent(project.title)}`;
                     }}
                 />
             </div>
@@ -228,12 +228,12 @@ const Projects = () => {
                                     animate={{ opacity: 1, x: 0 }}
                                     exit={{ opacity: 0, x: -20 }}
                                     transition={{ duration: 0.3 }}
-                                    src={selectedProject.images[currentImageIndex]}
+                                    src={`${import.meta.env.BASE_URL}${selectedProject.images[currentImageIndex].substring(1)}`}
                                     alt={`${selectedProject.title} Screenshot ${currentImageIndex + 1}`}
                                     className="max-w-full max-h-[60vh] md:max-h-[70vh] object-contain rounded-lg drop-shadow-2xl"
                                     onError={(e) => {
                                         e.target.onerror = null;
-                                        e.target.src = `https://via.placeholder.com/1280x720/050510/818cf8?text=${encodeURIComponent(selectedProject.title)}+-+Image+${currentImageIndex + 1}+Not+Found`;
+                                        e.target.src = `https://placehold.co/1280x720/050510/818cf8.png?text=${encodeURIComponent(selectedProject.title)}+-+Image+${currentImageIndex + 1}+Not+Found`;
                                     }}
                                 />
 

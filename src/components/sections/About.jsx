@@ -103,12 +103,12 @@ const About = () => {
                 >
                     <div className="absolute inset-0 bg-brand-cyan/20 blur-[100px] rounded-full"></div>
                     <img
-                        src="/avatar2.png"
+                        src={`${import.meta.env.BASE_URL}avatar2.png`}
                         alt="Aditya Avatar 2"
                         className="w-full max-w-[400px] h-auto object-contain relative z-10 filter drop-shadow-[0_0_30px_rgba(129,140,248,0.5)] fade-bottom"
                         onError={(e) => {
                             e.target.onerror = null;
-                            e.target.src = "/avatar.png"; // Fallback to original if avatar2 is missing
+                            e.target.src = `${import.meta.env.BASE_URL}avatar.png`; // Fallback to original if avatar2 is missing
                         }}
                     />
                 </motion.div>

@@ -10,16 +10,33 @@ const Contact = () => {
     const [loading, setLoading] = useState(false);
     const [launched, setLaunched] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        // Simulate sending email/form
-        setTimeout(() => {
-            setLoading(false);
-            setLaunched(true);
-            setForm({ name: '', email: '', message: '' });
-            setTimeout(() => setLaunched(false), 4000);
-        }, 1500);
+
+        const formData = new FormData(e.target);
+        formData.append("access_key", "YOUR_ACCESS_KEY_HERE"); // Replace this with Web3Forms Access Key
+
+        try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                setLaunched(true);
+                setForm({ name: '', email: '', message: '' });
+                setTimeout(() => setLaunched(false), 4000);
+            } else {
+                console.error("Form submission error", data);
+                alert("Something went wrong. Please check your Access Key.");
+            }
+        } catch (error) {
+            console.error("Network error", error);
+            alert("Failed to send message. Please try again later.");
+        }
+        setLoading(false);
     };
 
     const handleChange = (e) => {
@@ -108,7 +125,7 @@ const Contact = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="flex-1 min-h-[400px] flex flex-col items-center justify-between"
+                        className="flex-1 min-h-[250px] md:min-h-[400px] flex flex-col items-center justify-between"
                     >
                         <div className="w-full h-[300px] md:h-full relative pointer-events-auto cursor-move">
                             <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
