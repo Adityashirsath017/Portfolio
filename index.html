@@ -5,10 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="/Portfolio/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portfolio</title>
-    <script type="module" crossorigin src="/Portfolio/assets/index-t1QfUXYs.js"></script>
-    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-DB_H1CT8.css">
+    <script type="module" crossorigin src="/Portfolio/assets/index-mpYGT7Bi.js"></script>
+    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-B-Bjaw7l.css">
   </head>
   <body>
+    <!-- Intercept React-Three-Fiber deprecation warnings before bundle load -->
+    <script>
+      const originalWarn = console.warn;
+      console.warn = (...args) => {
+        if (typeof args[0] === 'string' && args[0].includes('THREE.') && args[0].includes('deprecated')) return;
+        originalWarn(...args);
+      };
+    </script>
     <div id="root"></div>
   </body>
 </html>
