@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-cyan: #00ffff;
+  --color-brand-purple: #818cf8;
+  --color-brand-blue: #3b82f6;
+  --color-space-black: #050510;
+  --color-space-glass: rgba(255, 255, 255, 0.05);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Base global styles for space theme */
+body {
+  background-color: var(--color-space-black);
+  color: white;
+  overflow-x: hidden;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-space-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-purple);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-cyan);
+}
+
+/* Shared utility classes for glassmorphism */
+@layer utilities {
+  .glass-card {
+    @apply bg-space-glass backdrop-blur-md border border-white/10 rounded-2xl shadow-xl shadow-black/50;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(129, 140, 248, 0.8), 0 0 20px rgba(0, 255, 255, 0.4);
+  }
+
+  .fade-bottom {
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+}
