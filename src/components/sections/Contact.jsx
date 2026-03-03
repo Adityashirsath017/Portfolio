@@ -64,7 +64,7 @@ const Contact = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="flex-1 glass-card p-6 md:p-12 relative"
+                        className="w-full lg:w-1/2 flex-none h-fit glass-card p-6 md:p-12 relative"
                     >
                         <h3 className="text-3xl font-bold text-white mb-6">Send a Message</h3>
 
@@ -125,7 +125,7 @@ const Contact = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="flex-1 min-h-[250px] md:min-h-[400px] flex flex-col items-center justify-between"
+                        className="w-full lg:w-1/2 flex-none min-h-[250px] md:min-h-[400px] h-fit flex flex-col items-center justify-between"
                     >
                         <div className="w-full h-[300px] md:h-full relative pointer-events-auto cursor-move">
                             <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>

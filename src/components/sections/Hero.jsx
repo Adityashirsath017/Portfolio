@@ -43,8 +43,8 @@ const Hero = () => {
 
     return (
         <section id="hero" className="w-full h-screen relative flex items-center justify-center">
-            {/* 3D Canvas Context (Moved back to right) */}
-            <div className="absolute inset-y-0 right-0 w-full md:w-1/2 z-0 hidden md:block">
+            {/* 3D Canvas Context (Now visible universally as requested on Mobile, moved to right on desktop) */}
+            <div className="absolute inset-y-0 right-0 w-full md:w-1/2 z-0 block h-full">
                 <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
                     <ambientLight intensity={0.5} />
                     <directionalLight position={[10, 10, 5]} intensity={1} />
@@ -114,8 +114,8 @@ const Hero = () => {
                     </motion.a>
                 </motion.div>
 
-                {/* Avatar image dynamically placed in flex for mobile, absolute for desktop */}
-                <div className="md:absolute right-0 md:right-[5%] top-1/2 md:-translate-y-1/2 w-full md:w-[40%] h-[50vh] md:h-[80%] flex items-center justify-center z-20 pointer-events-none mt-8 md:mt-0">
+                {/* Avatar image dynamically hidden on mobile, absolute for desktop */}
+                <div className="hidden md:absolute md:flex right-0 md:right-[5%] top-1/2 md:-translate-y-1/2 w-full md:w-[40%] h-[50vh] md:h-[80%] items-center justify-center z-20 pointer-events-none mt-8 md:mt-0">
                     <img src={`${import.meta.env.BASE_URL}avatar.png`} alt="Aditya Avatar" className="w-auto h-full object-contain filter drop-shadow-[0_0_30px_rgba(0,255,255,0.8)] fade-bottom" />
                 </div>
 

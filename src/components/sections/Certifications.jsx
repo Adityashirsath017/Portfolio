@@ -95,12 +95,12 @@ const Certifications = () => {
                             </div>
                             <div className="relative w-full p-4 md:p-8 flex items-center justify-center bg-black/50 overflow-auto">
                                 <img
-                                    src={selectedCert.image}
+                                    src={`${import.meta.env.BASE_URL}${selectedCert.image.substring(1)}`}
                                     alt={`${selectedCert.title} Certificate`}
                                     className="max-w-full max-h-[60vh] md:max-h-[70vh] object-contain rounded drop-shadow-2xl"
                                     onError={(e) => {
                                         e.target.onerror = null;
-                                        e.target.src = "https://via.placeholder.com/800x600/050510/00ffff?text=Image+Not+Uploaded+Yet";
+                                        e.target.src = "https://placehold.co/800x600/050510/00ffff.png?text=Preview+Not+Available";
                                     }}
                                 />
                             </div>
