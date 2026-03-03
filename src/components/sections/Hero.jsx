@@ -77,7 +77,7 @@ const Hero = () => {
                         transition={{ delay: 0.4, duration: 0.5 }}
                         className="text-4xl md:text-7xl font-bold text-white mb-6 text-glow"
                     >
-                        Aditya Shirsath
+                        Aditya Nandu Shirsath
                     </motion.h1>
 
                     <motion.div
